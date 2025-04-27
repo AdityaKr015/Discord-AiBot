@@ -17,7 +17,6 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# 🧠 Dictionary to store user history
 user_histories = {}
 
 @bot.event
@@ -26,7 +25,6 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    # Ignore the bot's own messages to prevent an infinite loop
     if message.author == bot.user:
         return
 
@@ -39,17 +37,13 @@ async def ask(ctx, *, question):
     async with ctx.typing():
         user_id = str(ctx.author.id)
 
-        # Get old history or empty
         history = user_histories.get(user_id, [])
 
-        # Add new question to history
         history.append(f"User: {question}")
 
-        # Keep only last 5 messages (memory limit)
         if len(history) > 5:
             history = history[-5:]
 
-        # Combine history into a prompt
         prompt = "\n".join(history)
 
         try:
@@ -61,10 +55,8 @@ async def ask(ctx, *, question):
 
             await ctx.send(reply)
 
-            # After replying, add bot's answer to history
             history.append(f"Bot: {reply}")
 
-            # Save updated history
             user_histories[user_id] = history
 
         except Exception as e:
