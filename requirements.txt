@@ -1,4 +1,0 @@
-pip install discord.py
-pip install requests
-pip install google.generativeai
-pip install dotenv
