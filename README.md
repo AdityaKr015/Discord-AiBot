@@ -15,15 +15,23 @@ Hello world,this is my first personal project where i build a Discord Bot which 
 - `google-generativeai`
 - `python-dotenv`
 
-## Installation
+## ⚙️ Installation
 
 1. **Clone the repository:**
+   ```bash
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
+   
 2. **Install dependencies:**
-     ```pip install -r requirements.txt```
-3. **Create a .env file:**
-  DISCORD_TOKEN=your_discord_bot_token_here
-  GEMINI_API_KEY=your_gemini_api_key_here
-4. **Run the bot:**
-  python main.py     
+
+   pip install -r requirements.txt
+
+3. **Create a .env file in the project root and add your keys:**
+ 
+   DISCORD_TOKEN=your_discord_bot_token_here
+  
+   GEMINI_API_KEY=your_gemini_api_key_here
+
+5. **Run the bot:**
+
+   python main.py     
