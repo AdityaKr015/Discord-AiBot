@@ -25,5 +25,5 @@ Hello world,this is my first personal project where i build a Discord Bot which 
 3. **Create a .env file:**
   DISCORD_TOKEN=your_discord_bot_token_here
   GEMINI_API_KEY=your_gemini_api_key_here
-4.**Run the bot:**
+4. **Run the bot:**
   python main.py     
